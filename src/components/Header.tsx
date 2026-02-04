@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Leaf } from "lucide-react";
 
 const Header = () => {
   const scrollToSection = (id: string) => {
@@ -8,46 +7,46 @@ const Header = () => {
   };
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 px-6 py-4">
+    <header className="absolute top-0 left-0 right-0 z-50 px-6 py-6">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="flex items-center">
-            <Leaf className="h-8 w-8 text-eco-gold" />
-            <span className="ml-2 text-2xl font-bold text-primary-foreground">
-              876<span className="text-eco-gold">Elite</span>
+        <div className="flex items-center">
+          <div className="flex flex-col items-start">
+            <div className="flex items-baseline">
+              <span className="text-3xl font-bold italic text-eco-gold">8</span>
+              <span className="text-3xl font-bold italic text-eco-light">7</span>
+              <span className="text-3xl font-bold italic text-eco-red">6</span>
+              <span className="text-3xl font-bold italic text-primary-foreground ml-1">
+                Elite
+              </span>
+            </div>
+            <span className="text-[10px] text-eco-red tracking-wider -mt-1">
+              Finish Cleaning
             </span>
           </div>
         </div>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Navigation - Center */}
+        <nav className="hidden md:flex items-center gap-10">
           <button
             onClick={() => scrollToSection("services")}
-            className="text-primary-foreground/90 hover:text-primary-foreground transition-colors font-medium"
+            className="text-primary-foreground hover:text-eco-gold transition-colors font-medium text-lg"
           >
             Services
           </button>
           <button
             onClick={() => scrollToSection("why-eco")}
-            className="text-primary-foreground/90 hover:text-primary-foreground transition-colors font-medium"
+            className="text-primary-foreground hover:text-eco-gold transition-colors font-medium text-lg"
           >
             Why Eco
           </button>
-          <Button
-            onClick={() => scrollToSection("contact")}
-            variant="destructive"
-            className="rounded-full px-6"
-          >
-            Contact
-          </Button>
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Contact Button - Right */}
         <Button
-          variant="ghost"
-          className="md:hidden text-primary-foreground"
           onClick={() => scrollToSection("contact")}
+          variant="destructive"
+          className="rounded-full px-8 py-5 text-lg font-medium shadow-lg"
         >
           Contact
         </Button>
