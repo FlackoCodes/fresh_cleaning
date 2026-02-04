@@ -1,50 +1,36 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
-const services = [
-  "Organic Sofa Cleaning",
-  "Eco Home Cleaning",
-  "Green Office Cleaning",
-  "Post-Construction Cleanup",
-];
-
+const services = ["Organic Sofa Cleaning", "Eco Home Cleaning", "Green Office Cleaning", "Post-Construction Cleanup"];
 const ContactSection = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
-    service: "",
+    service: ""
   });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
       title: "Quote Request Sent!",
-      description: "We'll get back to you within 24 hours.",
+      description: "We'll get back to you within 24 hours."
     });
     setFormData({
       firstName: "",
       lastName: "",
       email: "",
       phone: "",
-      service: "",
+      service: ""
     });
   };
-
-  return (
-    <section id="contact" className="py-20 bg-primary">
+  return <section id="contact" className="py-20 bg-[#fffcf5]">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - CTA */}
@@ -57,11 +43,7 @@ const ContactSection = () => {
               sustainable cleaning. Get your free quote today and experience the
               876 Elite difference.
             </p>
-            <Button
-              variant="secondary"
-              size="lg"
-              className="rounded-full px-6 bg-foreground text-primary-foreground hover:bg-foreground/90"
-            >
+            <Button variant="secondary" size="lg" className="rounded-full px-6 bg-foreground text-primary-foreground hover:bg-foreground/90">
               <Phone className="mr-2 h-5 w-5" />
               Call (876) 555-0123
             </Button>
@@ -75,79 +57,47 @@ const ContactSection = () => {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
-                <Input
-                  placeholder="First Name"
-                  value={formData.firstName}
-                  onChange={(e) =>
-                    setFormData({ ...formData, firstName: e.target.value })
-                  }
-                  className="bg-background"
-                  required
-                />
-                <Input
-                  placeholder="Last Name"
-                  value={formData.lastName}
-                  onChange={(e) =>
-                    setFormData({ ...formData, lastName: e.target.value })
-                  }
-                  className="bg-background"
-                  required
-                />
+                <Input placeholder="First Name" value={formData.firstName} onChange={e => setFormData({
+                ...formData,
+                firstName: e.target.value
+              })} className="bg-background" required />
+                <Input placeholder="Last Name" value={formData.lastName} onChange={e => setFormData({
+                ...formData,
+                lastName: e.target.value
+              })} className="bg-background" required />
               </div>
 
-              <Input
-                type="email"
-                placeholder="Email Address"
-                value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
-                className="bg-background"
-                required
-              />
+              <Input type="email" placeholder="Email Address" value={formData.email} onChange={e => setFormData({
+              ...formData,
+              email: e.target.value
+            })} className="bg-background" required />
 
-              <Input
-                type="tel"
-                placeholder="Phone Number"
-                value={formData.phone}
-                onChange={(e) =>
-                  setFormData({ ...formData, phone: e.target.value })
-                }
-                className="bg-background"
-                required
-              />
+              <Input type="tel" placeholder="Phone Number" value={formData.phone} onChange={e => setFormData({
+              ...formData,
+              phone: e.target.value
+            })} className="bg-background" required />
 
-              <Select
-                value={formData.service}
-                onValueChange={(value) =>
-                  setFormData({ ...formData, service: value })
-                }
-              >
+              <Select value={formData.service} onValueChange={value => setFormData({
+              ...formData,
+              service: value
+            })}>
                 <SelectTrigger className="bg-background">
                   <SelectValue placeholder="Select Service" />
                 </SelectTrigger>
                 <SelectContent>
-                  {services.map((service) => (
-                    <SelectItem key={service} value={service}>
+                  {services.map(service => <SelectItem key={service} value={service}>
                       {service}
-                    </SelectItem>
-                  ))}
+                    </SelectItem>)}
                 </SelectContent>
               </Select>
 
-              <Button
-                type="submit"
-                variant="destructive"
-                className="w-full rounded-full py-6 text-lg font-semibold"
-              >
+              <Button type="submit" variant="destructive" className="w-full rounded-full py-6 text-lg font-semibold">
                 Send Quote Request
               </Button>
             </form>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;
