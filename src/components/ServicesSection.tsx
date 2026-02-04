@@ -1,38 +1,41 @@
 import { Button } from "@/components/ui/button";
-import { Sofa, Home, Building2, HardHat, ArrowRight, Leaf } from "lucide-react";
+import { ArrowRight, Leaf } from "lucide-react";
 import serviceSofa from "@/assets/service-sofa.jpg";
 import serviceHome from "@/assets/service-home.jpg";
 import servicePressure from "@/assets/service-pressure.jpg";
-import serviceIndustrial from "@/assets/service-industrial.jpg";
+import sofaIcon from "@/assets/sofa.svg";
+import homeIcon from "@/assets/home.svg";
+import officeIcon from "@/assets/office.svg";
+import constructionIcon from "@/assets/contruction.svg";
 
 const services = [
   {
-    icon: Sofa,
+    icon: sofaIcon,
     title: "Organic Sofa Cleaning",
     description:
       "Gentle deep cleaning using natural products to rejuvenate and refresh upholstery without harsh chemicals.",
   },
   {
-    icon: Home,
+    icon: homeIcon,
     title: "Eco Home Cleaning",
     description:
       "Regular and intensive green cleaning services for eco-conscious residential spaces using biodegradable products.",
   },
   {
-    icon: Building2,
+    icon: officeIcon,
     title: "Green Office Cleaning",
     description:
       "Environmentally responsible cleaning programs suited for modern, sustainable workplaces.",
   },
   {
-    icon: HardHat,
+    icon: constructionIcon,
     title: "Post-Construction Cleanup",
     description:
       "Comprehensive cleanup using biodegradable products to prepare newly built spaces without harmful residues.",
   },
 ];
 
-const serviceImages = [serviceSofa, serviceHome, servicePressure, serviceIndustrial];
+const serviceImages = [serviceSofa, serviceHome, servicePressure];
 
 const ServicesSection = () => {
   const scrollToContact = () => {
@@ -41,43 +44,61 @@ const ServicesSection = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-secondary">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+    <section id="services" className="py-20 bg-white relative overflow-hidden">
+      {/* Background vertical lines */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
+        <div className="container mx-auto px-6 h-full relative">
+          <div className="absolute top-0 bottom-0 w-px bg-[#006E01]/20 left-[0%]" />
+          <div className="absolute top-0 bottom-0 w-px bg-[#FF3231]/25 left-[38%]" />
+          <div className="absolute top-0 bottom-0 w-px bg-[#FFC300]/25 left-[62%]" />
+          <div className="absolute top-0 bottom-0 w-px bg-[#006E01]/20 left-[100%]" />
+        </div>
+      </div>
+      <div className="container mx-auto relative">
+        <div className="grid lg:grid-cols-2 gap-24 items-start">
           {/* Left Side - Title and Images */}
           <div>
             {/* Eco Badge */}
-            <div className="inline-flex items-center gap-2 bg-muted px-4 py-2 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 bg-[#E6E4C8] px-4 py-2 rounded-full mb-6">
               <Leaf className="h-4 w-4 text-eco-light" />
               <span className="text-sm font-medium text-foreground">
                 100% Eco-Friendly Solutions
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-8">
               Our Eco Services
             </h2>
 
-            {/* Image Grid */}
+            {/* Image Grid: 1 large left, 2 stacked right */}
             <div className="grid grid-cols-2 gap-4">
-              {serviceImages.map((img, index) => (
-                <div
-                  key={index}
-                  className="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-                >
-                  <img
-                    src={img}
-                    alt={`Service ${index + 1}`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              ))}
+              <div className="row-span-2 rounded-2xl overflow-hidden my-4 shadow-[4px_4px_0_#006E01] hover:shadow-[6px_6px_0_#006E01] transition-shadow">
+                <img
+                  src={serviceImages[0]}
+                  alt="Service 1"
+                  className="w-full h-full min-h-[240px] object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-[4px_4px_0_#006E01] hover:shadow-[6px_6px_0_#006E01] transition-shadow">
+                <img
+                  src={serviceImages[1]}
+                  alt="Service 2"
+                  className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-[4px_4px_0_#006E01] hover:shadow-[6px_6px_0_#006E01] transition-shadow">
+                <img
+                  src={serviceImages[2]}
+                  alt="Service 3"
+                  className="w-full h-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
             </div>
           </div>
 
           {/* Right Side - Description and Services */}
-          <div className="lg:pt-12">
-            <p className="text-lg text-muted-foreground mb-6">
+          <div className="">
+            <p className="text-lg text-foreground mb-6">
               Comprehensive green cleaning solutions tailored for modern,
               environmentally-conscious spaces
             </p>
@@ -96,7 +117,7 @@ const ServicesSection = () => {
               {services.map((service, index) => (
                 <div key={index} className="group">
                   <div className="mb-3">
-                    <service.icon className="h-10 w-10 text-eco-light" />
+                    <img src={service.icon} alt="" className="h-10 w-10" aria-hidden />
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-2">
                     {service.title}

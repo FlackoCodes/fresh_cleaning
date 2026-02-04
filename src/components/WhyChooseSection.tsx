@@ -1,22 +1,24 @@
-import { Wind, Globe, Heart } from "lucide-react";
 
+import healthIcon from "@/assets/health.svg";
+import environmentIcon from "@/assets/Environment.svg";
+import familyIcon from "@/assets/family.svg";
 const benefits = [
   {
-    icon: Wind,
+    icon: healthIcon,
     iconBg: "bg-eco-gold",
     title: "Healthier Indoor Air",
     description:
       "Non-toxic formulas improve air quality and reduce allergens for a safer environment.",
   },
   {
-    icon: Globe,
+    icon: environmentIcon,
     iconBg: "bg-eco-red",
     title: "Environmental Protection",
     description:
       "Biodegradable products that don't harm waterways or contribute to pollution.",
   },
   {
-    icon: Heart,
+    icon: familyIcon,
     iconBg: "bg-eco-light",
     title: "Safe for Families & Pets",
     description:
@@ -33,7 +35,7 @@ const stats = [
 
 const WhyChooseSection = () => {
   return (
-    <section id="why-eco" className="py-20 bg-muted">
+    <section id="why-eco" className="py-20 bg-[#EAF5E2]">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Benefits */}
@@ -45,11 +47,9 @@ const WhyChooseSection = () => {
             <div className="space-y-8">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex gap-4">
-                  <div
-                    className={`flex-shrink-0 w-12 h-12 ${benefit.iconBg} rounded-full flex items-center justify-center`}
-                  >
-                    <benefit.icon className="h-6 w-6 text-primary-foreground" />
-                  </div>
+                  
+                    <img src={benefit.icon} alt="" className="h-10 w-10 object-contain" aria-hidden />
+                 
                   <div>
                     <h3 className="text-lg font-bold text-foreground mb-1">
                       {benefit.title}
@@ -66,12 +66,12 @@ const WhyChooseSection = () => {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="bg-card p-6 rounded-2xl border border-border text-center hover:shadow-lg transition-shadow"
+                className="bg-card p-6 rounded-2xl shadow-[4px_4px_0_#006E01] text-center hover:shadow-lg transition-shadow"
               >
-                <div className="text-4xl md:text-5xl font-bold text-eco-light mb-2">
+                <h5 className="text-4xl md:text-5xl font-bold text-eco-light mb-2">
                   {stat.value}
-                </div>
-                <div className="text-muted-foreground font-medium">{stat.label}</div>
+                </h5>
+                <div className="text-foreground font-medium">{stat.label}</div>
               </div>
             ))}
           </div>

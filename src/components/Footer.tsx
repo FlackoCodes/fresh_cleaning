@@ -1,4 +1,5 @@
 import { Leaf, Phone, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const services = [
   "Organic Sofa Cleaning",
@@ -13,12 +14,9 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Logo & Description */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Leaf className="h-7 w-7 text-eco-gold" />
-              <span className="text-xl font-bold text-primary-foreground">
-                876<span className="text-eco-gold">Elite</span>
-              </span>
+          <div className="flex flex-col items-start">
+            <div className="justify-start mb-4">
+              <img src={logo} alt="876 Elite Finish Cleaning" className="h-12 w-full object-contain" aria-hidden />
             </div>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               Premium eco-friendly cleaning services that protect your health
@@ -74,7 +72,7 @@ const Footer = () => {
             <div className="flex gap-3">
               <a
                 href="#"
-                className="w-10 h-10 bg-[#1877F2] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+                className="w-10 h-10 bg-gradient-to-br from-[#EA2120] via-[#FFC300] to-[#006E01] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 aria-label="Facebook"
               >
                 <svg className="w-5 h-5 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
@@ -83,7 +81,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-gradient-to-br from-[#f09433] via-[#e6683c] to-[#bc1888] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+                className="w-10 h-10 bg-gradient-to-br from-[#EA2120] via-[#FFC300] to-[#006E01] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
@@ -92,7 +90,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-[#1DA1F2] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+                className="w-10 h-10 bg-gradient-to-br from-[#EA2120] via-[#FFC300] to-[#006E01] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
