@@ -35,10 +35,10 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - CTA */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
               Ready for a Greener Clean?
             </h2>
-            <p className="text-lg text-primary-foreground/80 mb-8 max-w-md">
+            <p className="text-lg mb-8 max-w-md text-muted-foreground">
               Join hundreds of satisfied customers who've made the switch to
               sustainable cleaning. Get your free quote today and experience the
               876 Elite difference.
