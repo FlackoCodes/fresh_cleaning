@@ -1,10 +1,20 @@
+import { useState } from "react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import logoImg from "@/assets/logo.png";
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
+    setOpen(false);
   };
 
   return (
@@ -23,7 +33,7 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Navigation - Center */}
+        {/* Navigation - Center (Desktop) */}
         <nav className="hidden md:flex items-center gap-10">
           <button
             onClick={() => scrollToSection("services")}
@@ -39,14 +49,53 @@ const Header = () => {
           </button>
         </nav>
 
-        {/* Contact Button - Right */}
+        {/* Contact Button - Right (Desktop) */}
         <Button
           onClick={() => scrollToSection("contact")}
           variant="destructive"
-          className="rounded-full px-8 py-5 text-lg font-medium shadow-lg"
+          className="hidden md:flex rounded-full px-8 py-5 text-lg font-medium shadow-lg"
         >
           Contact
         </Button>
+
+        {/* Mobile Menu */}
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild className="md:hidden">
+            <Button variant="ghost" size="icon" className="text-eco-gold">
+              <Menu className="h-6 w-6" />
+              <span className="sr-only">Open menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="bg-primary text-primary-foreground border-primary">
+            {/* Logo in mobile menu */}
+            <div className="flex items-center mb-8 mt-4">
+              <img src={logoImg} alt="Eco Cleaning" className="h-10" />
+            </div>
+
+            {/* Mobile Navigation */}
+            <nav className="flex flex-col gap-4">
+              <button
+                onClick={() => scrollToSection("services")}
+                className="w-full text-left py-3 px-4 text-lg font-medium hover:bg-primary-foreground/10 rounded-lg transition-colors"
+              >
+                Services
+              </button>
+              <button
+                onClick={() => scrollToSection("why-eco")}
+                className="w-full text-left py-3 px-4 text-lg font-medium hover:bg-primary-foreground/10 rounded-lg transition-colors"
+              >
+                Why Eco
+              </button>
+              <Button
+                onClick={() => scrollToSection("contact")}
+                variant="destructive"
+                className="w-full mt-4 rounded-full py-5 text-lg font-medium shadow-lg"
+              >
+                Contact
+              </Button>
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );
