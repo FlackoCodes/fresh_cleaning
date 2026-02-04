@@ -8,7 +8,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-[95vh] flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -20,12 +20,11 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10 pt-20">
         <div className="max-w-4xl">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
             <span className="text-primary-foreground">Elite Cleaning with</span>
             <br />
-            <span className="text-primary-foreground">a </span>
-            <span className="text-gradient-gold">Flawless</span>
-            <span className="text-primary-foreground"> Finish</span>
+            <span className="text-primary-foreground">a <span className="text-gradient-gold">Flawless</span> Finish</span>
+          
           </h1>
 
           <p className="text-md md:text-lg text-primary-foreground/80 mb-8 max-w-lg">
