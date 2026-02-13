@@ -45,15 +45,7 @@ const ServicesSection = () => {
 
   return (
     <section id="services" className="py-20 bg-white relative overflow-hidden">
-      {/* Background vertical lines */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden>
-        <div className="container mx-auto px-6 h-full relative">
-          <div className="absolute top-0 bottom-0 w-px bg-[#006E01]/20 left-[0%]" />
-          <div className="absolute top-0 bottom-0 w-px bg-[#FF3231]/25 left-[38%]" />
-          <div className="absolute top-0 bottom-0 w-px bg-[#FFC300]/25 left-[62%]" />
-          <div className="absolute top-0 bottom-0 w-px bg-[#006E01]/20 left-[100%]" />
-        </div>
-      </div>
+
       <div className="container mx-auto relative">
         <div className="grid lg:grid-cols-2 gap-24 items-start">
           {/* Left Side - Title and Images */}

@@ -1,11 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import logoImg from "@/assets/logo.png";
 
 const Header = () => {
@@ -74,12 +70,19 @@ const Header = () => {
         {/* Mobile Menu */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" className="text-eco-gold p-2 bg-red-900/10 backdrop-blur-sm">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-eco-gold p-2 bg-red-900/10 backdrop-blur-sm"
+            >
               <Menu className="h-6 w-6" />
               <span className="sr-only">Open menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="bg-primary text-primary-foreground border-primary">
+          <SheetContent
+            side="right"
+            className="bg-primary text-primary-foreground border-primary"
+          >
             {/* Logo in mobile menu */}
             <div className="flex items-center mb-8 mt-4">
               <img src={logoImg} alt="Eco Cleaning" className="h-10" />
