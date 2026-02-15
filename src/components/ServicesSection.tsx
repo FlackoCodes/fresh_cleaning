@@ -45,20 +45,10 @@ const ServicesSection = () => {
 
   return (
     <section id="services" className="py-20 bg-white relative overflow-hidden">
-      {/* Background vertical lines */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden>
-        <div className="container mx-auto px-6 h-full relative">
-          <div className="absolute top-0 bottom-0 w-px bg-[#006E01]/20 left-[0%]" />
-          <div className="absolute top-0 bottom-0 w-px bg-[#FF3231]/25 left-[38%]" />
-          <div className="absolute top-0 bottom-0 w-px bg-[#FFC300]/25 left-[62%]" />
-          <div className="absolute top-0 bottom-0 w-px bg-[#006E01]/20 left-[100%]" />
-        </div>
-      </div>
+
       <div className="container mx-auto relative">
         <div className="grid lg:grid-cols-2 gap-24 items-start">
-          {/* Left Side - Title and Images */}
           <div>
-            {/* Eco Badge */}
             <div className="inline-flex items-center gap-2 bg-[#E6E4C8] px-4 py-2 rounded-full mb-6">
               <Leaf className="h-4 w-4 text-eco-light" />
               <span className="text-sm font-medium text-foreground">
@@ -70,7 +60,6 @@ const ServicesSection = () => {
               Our Eco Services
             </h2>
 
-            {/* Image Grid: 1 large left, 2 stacked right */}
             <div className="grid grid-cols-2 gap-4">
               <div className="row-span-2 rounded-2xl overflow-hidden my-4 shadow-[4px_4px_0_#006E01] hover:shadow-[6px_6px_0_#006E01] transition-shadow">
                 <img
@@ -96,7 +85,6 @@ const ServicesSection = () => {
             </div>
           </div>
 
-          {/* Right Side - Description and Services */}
           <div className="">
             <p className="text-lg text-foreground mb-6">
               Comprehensive green cleaning solutions tailored for modern,
@@ -112,7 +100,6 @@ const ServicesSection = () => {
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
 
-            {/* Service Cards Grid */}
             <div className="grid sm:grid-cols-2 gap-6">
               {services.map((service, index) => (
                 <div key={index} className="group">
