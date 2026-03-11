@@ -1,37 +1,41 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Leaf } from "lucide-react";
+import { ArrowRight, Leaf, CheckCircle2 } from "lucide-react";
 import serviceSofa from "@/assets/service-sofa.jpg";
 import serviceHome from "@/assets/service-home.jpg";
 import servicePressure from "@/assets/service-pressure.jpg";
-import sofaIcon from "@/assets/sofa.svg";
-import homeIcon from "@/assets/home.svg";
-import officeIcon from "@/assets/office.svg";
-import constructionIcon from "@/assets/contruction.svg";
 
 const services = [
   {
-    icon: sofaIcon,
-    title: "Organic Sofa Cleaning",
-    description:
-      "Gentle deep cleaning using natural products to rejuvenate and refresh upholstery without harsh chemicals.",
+    title: "Residential Cleaning",
+    description: "Comprehensive house cleaning customized to your lifestyle.",
   },
   {
-    icon: homeIcon,
-    title: "Eco Home Cleaning",
-    description:
-      "Regular and intensive green cleaning services for eco-conscious residential spaces using biodegradable products.",
+    title: "Commercial / Office Cleanings",
+    description: "Professional cleaning programs for modern workplaces.",
   },
   {
-    icon: officeIcon,
-    title: "Green Office Cleaning",
-    description:
-      "Environmentally responsible cleaning programs suited for modern, sustainable workplaces.",
+    title: "Move in & Move Out Cleaning",
+    description: "Detailed deep cleaning for stress-free transitions.",
   },
   {
-    icon: constructionIcon,
-    title: "Post-Construction Cleanup",
-    description:
-      "Comprehensive cleanup using biodegradable products to prepare newly built spaces without harmful residues.",
+    title: "New Construction & Post Construction",
+    description: "Thorough cleanup to make newly built spaces ready for use.",
+  },
+  {
+    title: "Airbnb Cleaning",
+    description: "Fast and reliable turnover cleaning for your guests.",
+  },
+  {
+    title: "Maintenance Cleaning",
+    description: "Regular scheduled cleaning to keep your space pristine.",
+  },
+  {
+    title: "Place of Worship",
+    description: "Respectful and detailed cleaning for sacred spaces.",
+  },
+  {
+    title: "After Event Cleanup",
+    description: "Efficient cleanup to restore venues after gatherings.",
   },
 ];
 
@@ -45,19 +49,18 @@ const ServicesSection = () => {
 
   return (
     <section id="services" className="py-20 bg-white relative overflow-hidden">
-
       <div className="container mx-auto relative">
         <div className="grid lg:grid-cols-2 gap-24 items-start">
           <div>
             <div className="inline-flex items-center gap-2 bg-[#E6E4C8] px-4 py-2 rounded-full mb-6">
               <Leaf className="h-4 w-4 text-eco-light" />
               <span className="text-sm font-medium text-foreground">
-                100% Eco-Friendly Solutions
+                We do offer the option of eco-friendly products
               </span>
             </div>
 
             <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-8">
-              Our Eco Services
+              Our Services
             </h2>
 
             <div className="grid grid-cols-2 gap-4">
@@ -87,7 +90,7 @@ const ServicesSection = () => {
 
           <div className="">
             <p className="text-lg text-foreground mb-6">
-              Comprehensive green cleaning solutions tailored for modern,
+              Comprehensive cleaning solutions tailored for modern,
               environmentally-conscious spaces
             </p>
 
@@ -104,7 +107,7 @@ const ServicesSection = () => {
               {services.map((service, index) => (
                 <div key={index} className="group">
                   <div className="mb-3">
-                    <img src={service.icon} alt="" className="h-10 w-10" aria-hidden />
+                    <CheckCircle2 className="h-8 w-8 text-primary" aria-hidden />
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-2">
                     {service.title}
