@@ -29,7 +29,6 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Construct email body/message
     let messageBody = `Name: ${formData.firstName} ${formData.lastName}\n`;
     messageBody += `Phone: ${formData.phone}\n`;
     messageBody += `Service Category: ${formData.service}\n`;
@@ -66,7 +65,6 @@ const ContactSection = () => {
           description: "We have received your details and will get back to you shortly."
         });
         
-        // Reset form
         setFormData({
           firstName: "",
           lastName: "",
@@ -95,7 +93,6 @@ const ContactSection = () => {
     <section id="contact" className="py-20 bg-[#fffcf5]">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Side - CTA */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
               Ready for a Spotless Clean?
@@ -111,7 +108,7 @@ const ContactSection = () => {
             </Button>
           </div>
 
-          {/* Right Side - Form */}
+
           <div className="bg-card p-8 rounded-2xl shadow-2xl">
             <h3 className="text-2xl font-bold text-card-foreground mb-6">
               Request Your Quote
@@ -142,7 +139,7 @@ const ContactSection = () => {
               <Select value={formData.service} onValueChange={value => setFormData({
               ...formData,
               service: value,
-              propertyType: "" // Reset property type when service changes
+              propertyType: "" 
             })}>
                 <SelectTrigger className="bg-background">
                   <SelectValue placeholder="Select Service Category" />
@@ -156,7 +153,6 @@ const ContactSection = () => {
                 </SelectContent>
               </Select>
 
-              {/* Conditional Property Type for Residential */}
               {formData.service === "Residential" && (
                 <div className="space-y-3 bg-background p-4 rounded-md border border-input">
                   <Label className="text-sm font-semibold text-foreground">Property Type</Label>
