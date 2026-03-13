@@ -10,7 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const serviceCategories = ["Residential", "Commercial", "Event"];
 
-const WEB3FORMS_ACCESS_KEY = "6012d898-19ab-4519-bc07-0fb9f1de0e25";
+const WEB3FORMS_ACCESS_KEY = "cd56ea0f-ca49-4745-9c1b-ac88e01474ab";
 
 const ContactSection = () => {
   const { toast } = useToast();
