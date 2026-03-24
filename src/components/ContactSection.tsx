@@ -28,15 +28,15 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     let messageBody = `Name: ${formData.firstName} ${formData.lastName}\n`;
     messageBody += `Phone: ${formData.phone}\n`;
     messageBody += `Service Category: ${formData.service}\n`;
-    
+
     if (formData.service === "Residential" && formData.propertyType) {
       messageBody += `Property Type: ${formData.propertyType}\n`;
     }
-    
+
     if (formData.details) {
       messageBody += `\nAdditional Details:\n${formData.details}\n`;
     }
@@ -64,7 +64,7 @@ const ContactSection = () => {
           title: "Quote Request Sent Successfully!",
           description: "We have received your details and will get back to you shortly."
         });
-        
+
         setFormData({
           firstName: "",
           lastName: "",
@@ -104,7 +104,7 @@ const ContactSection = () => {
             </p>
             <Button variant="secondary" size="lg" className="rounded-full px-6 bg-foreground text-primary-foreground hover:bg-foreground/90">
               <Phone className="mr-2 h-5 w-5" />
-              Call (876) 555-0123
+              Call 647-478-0831
             </Button>
           </div>
 
@@ -117,30 +117,30 @@ const ContactSection = () => {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <Input placeholder="First Name" value={formData.firstName} onChange={e => setFormData({
-                ...formData,
-                firstName: e.target.value
-              })} className="bg-background" required />
+                  ...formData,
+                  firstName: e.target.value
+                })} className="bg-background" required />
                 <Input placeholder="Last Name" value={formData.lastName} onChange={e => setFormData({
-                ...formData,
-                lastName: e.target.value
-              })} className="bg-background" required />
+                  ...formData,
+                  lastName: e.target.value
+                })} className="bg-background" required />
               </div>
 
               <Input type="email" placeholder="Email Address" value={formData.email} onChange={e => setFormData({
-              ...formData,
-              email: e.target.value
-            })} className="bg-background" required />
+                ...formData,
+                email: e.target.value
+              })} className="bg-background" required />
 
               <Input type="tel" placeholder="Phone Number" value={formData.phone} onChange={e => setFormData({
-              ...formData,
-              phone: e.target.value
-            })} className="bg-background" required />
+                ...formData,
+                phone: e.target.value
+              })} className="bg-background" required />
 
               <Select value={formData.service} onValueChange={value => setFormData({
-              ...formData,
-              service: value,
-              propertyType: "" 
-            })}>
+                ...formData,
+                service: value,
+                propertyType: ""
+              })}>
                 <SelectTrigger className="bg-background">
                   <SelectValue placeholder="Select Service Category" />
                 </SelectTrigger>
@@ -156,9 +156,9 @@ const ContactSection = () => {
               {formData.service === "Residential" && (
                 <div className="space-y-3 bg-background p-4 rounded-md border border-input">
                   <Label className="text-sm font-semibold text-foreground">Property Type</Label>
-                  <RadioGroup 
-                    value={formData.propertyType} 
-                    onValueChange={(value) => setFormData({...formData, propertyType: value})}
+                  <RadioGroup
+                    value={formData.propertyType}
+                    onValueChange={(value) => setFormData({ ...formData, propertyType: value })}
                     className="flex flex-col space-y-1"
                     required
                   >
@@ -174,17 +174,17 @@ const ContactSection = () => {
                 </div>
               )}
 
-              <Textarea 
+              <Textarea
                 placeholder="Details (e.g., Please describe the specific service you require)"
                 value={formData.details}
-                onChange={e => setFormData({...formData, details: e.target.value})}
+                onChange={e => setFormData({ ...formData, details: e.target.value })}
                 className="bg-background min-h-[100px]"
                 required
               />
 
-              <Button 
-                type="submit" 
-                variant="destructive" 
+              <Button
+                type="submit"
+                variant="destructive"
                 className="w-full rounded-full py-6 text-lg font-semibold"
                 disabled={isSubmitting}
               >
