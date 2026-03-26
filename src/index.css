@@ -6,98 +6,97 @@
 
 @layer base {
   :root {
-    /* Core Colors - Deep Forest Green Theme */
-    --background: 40 33% 97%;
-    --foreground: 150 40% 12%;
+    /* Core Colors - Jamaican Theme (Green, Gold, Black) */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 150 40% 12%;
+    --card-foreground: 0 0% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 150 40% 12%;
+    --popover-foreground: 0 0% 13%;
 
-    /* Primary - Deep Forest Green */
-    --primary: 150 40% 12%;
+    /* Primary - Jamaican Green */
+    --primary: 156 68% 33%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Light Cream/Beige */
-    --secondary: 40 50% 94%;
-    --secondary-foreground: 150 40% 12%;
+    /* Secondary - Light Jamaican Cream/Beige */
+    --secondary: 42 100% 85%;
+    --secondary-foreground: 156 68% 33%;
 
-    /* Accent - Bright Golden Yellow */
-    --accent: 48 95% 55%;
-    --accent-foreground: 150 40% 12%;
+    /* Accent - Jamaican Gold/Yellow */
+    --accent: 42 100% 50%;
+    --accent-foreground: 156 68% 33%;
 
-    /* Muted - Light Green Tint */
-    --muted: 130 30% 92%;
-    --muted-foreground: 150 20% 40%;
+    /* Muted - Light Gold Tint */
+    --muted: 42 80% 88%;
+    --muted-foreground: 156 50% 30%;
 
     /* Destructive - Action Red */
     --destructive: 4 84% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 130 20% 85%;
-    --input: 130 20% 85%;
-    --ring: 150 40% 12%;
+    --border: 156 40% 80%;
+    --input: 156 40% 80%;
+    --ring: 156 68% 33%;
 
     --radius: 0.5rem;
 
-    /* Custom Eco Theme Colors */
-    --eco-green-dark: 150 40% 12%;
-    --eco-green-light: 130 50% 35%;
-    --eco-cream: 40 50% 94%;
-    --eco-mint: 130 30% 92%;
-    --eco-gold: 48 95% 55%;
-    --eco-red: 4 84% 45%;
-    --eco-orange: 25 95% 53%;
+    /* Custom Jamaican Theme Colors */
+    --jamaica-green: 156 68% 33%;
+    --jamaica-green-light: 156 60% 45%;
+    --jamaica-gold: 42 100% 50%;
+    --jamaica-gold-light: 42 100% 85%;
+    --jamaica-black: 0 0% 13%;
+    --jamaica-cream: 0 0% 98%;
 
-    --sidebar-background: 150 40% 12%;
+    --sidebar-background: 156 68% 33%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 48 95% 55%;
-    --sidebar-primary-foreground: 150 40% 12%;
-    --sidebar-accent: 130 50% 35%;
+    --sidebar-primary: 42 100% 50%;
+    --sidebar-primary-foreground: 156 68% 33%;
+    --sidebar-accent: 156 60% 45%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 150 30% 20%;
-    --sidebar-ring: 48 95% 55%;
+    --sidebar-border: 156 50% 28%;
+    --sidebar-ring: 42 100% 50%;
   }
 
   .dark {
-    --background: 150 40% 8%;
-    --foreground: 40 33% 97%;
+    --background: 156 60% 12%;
+    --foreground: 42 100% 95%;
 
-    --card: 150 35% 12%;
-    --card-foreground: 40 33% 97%;
+    --card: 156 60% 16%;
+    --card-foreground: 42 100% 95%;
 
-    --popover: 150 35% 12%;
-    --popover-foreground: 40 33% 97%;
+    --popover: 156 60% 16%;
+    --popover-foreground: 42 100% 95%;
 
-    --primary: 48 95% 55%;
-    --primary-foreground: 150 40% 12%;
+    --primary: 42 100% 50%;
+    --primary-foreground: 156 68% 33%;
 
-    --secondary: 150 30% 18%;
-    --secondary-foreground: 40 33% 97%;
+    --secondary: 156 50% 22%;
+    --secondary-foreground: 42 100% 95%;
 
-    --muted: 150 30% 18%;
-    --muted-foreground: 130 20% 60%;
+    --muted: 156 50% 22%;
+    --muted-foreground: 42 100% 70%;
 
-    --accent: 130 50% 35%;
+    --accent: 156 60% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 4 84% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 150 30% 20%;
-    --input: 150 30% 20%;
-    --ring: 48 95% 55%;
+    --border: 156 50% 25%;
+    --input: 156 50% 25%;
+    --ring: 42 100% 50%;
 
-    --sidebar-background: 150 40% 8%;
-    --sidebar-foreground: 40 33% 97%;
-    --sidebar-primary: 48 95% 55%;
-    --sidebar-primary-foreground: 150 40% 12%;
-    --sidebar-accent: 130 50% 35%;
+    --sidebar-background: 156 60% 12%;
+    --sidebar-foreground: 42 100% 95%;
+    --sidebar-primary: 42 100% 50%;
+    --sidebar-primary-foreground: 156 68% 33%;
+    --sidebar-accent: 156 60% 45%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 150 30% 15%;
-    --sidebar-ring: 48 95% 55%;
+    --sidebar-border: 156 50% 20%;
+    --sidebar-ring: 42 100% 50%;
   }
 }
 
@@ -110,29 +109,50 @@
     @apply bg-background text-foreground antialiased font-sans;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display;
   }
 }
 
 @layer utilities {
   .text-gradient-gold {
-    @apply bg-gradient-to-r from-accent to-[hsl(38,90%,50%)] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent to-[hsl(46, 100%, 55%)] bg-clip-text text-transparent;
   }
 
-  .bg-eco-dark {
+  .text-gradient-jamaica {
+    @apply bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .bg-jamaica-dark {
     @apply bg-primary;
   }
 
-  .bg-eco-cream {
+  .bg-jamaica-light {
     @apply bg-secondary;
   }
 
-  .bg-eco-mint {
-    @apply bg-muted;
+  .bg-jamaica-gold {
+    @apply bg-accent;
   }
 
-  .text-eco-gold {
-    @apply text-accent;
+  .text-jamaica-gold {
+    @apply text-accent font-bold;
+  }
+
+  .border-jamaica {
+    @apply border-primary;
+  }
+
+  .jamaica-gradient {
+    @apply bg-gradient-to-br from-primary via-[#2d7a5f] to-accent;
+  }
+
+  .jamaica-gradient-accent {
+    @apply bg-gradient-to-r from-accent via-primary to-accent;
   }
 }
