@@ -1,5 +1,5 @@
 import { Leaf, Phone, Mail, MapPin } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/jam.png";
 
 const services = [
   "Organic Sofa Cleaning",
@@ -16,7 +16,7 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="flex flex-col items-start">
             <div className="justify-start mb-4">
-              <img src={logo} alt="876 Elite Finish Cleaning" className="h-12 w-full object-contain" aria-hidden />
+              <img src={logo} alt="876 Elite Finish Cleaning" className="h-12 w-24 object-contain" aria-hidden />
             </div>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               Premium eco-friendly cleaning services that protect your health

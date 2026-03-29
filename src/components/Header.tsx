@@ -6,7 +6,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import logoImg from "@/assets/logo.png";
+import logoImg from "@/assets/jam.png";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -41,7 +41,7 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center">
           <div className="flex flex-col items-start">
-            <img src={logoImg} alt="Eco Cleaning" className="w-full h-10" />
+            <img src={logoImg} alt="Eco Cleaning" className="w-20 h-10 " />
           </div>
         </div>
 
