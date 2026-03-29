@@ -121,7 +121,7 @@
 
 @layer utilities {
   .text-gradient-gold {
-    @apply bg-gradient-to-r from-accent to-[hsl(46, 100%, 55%)] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent to-[hsl(46,100%,55%)] bg-clip-text text-transparent;
   }
 
   .text-gradient-jamaica {
