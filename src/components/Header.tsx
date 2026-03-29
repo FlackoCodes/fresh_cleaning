@@ -30,9 +30,8 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-6 py-6 transition-all duration-300">
       <div
-        className={`container px-3 py-3 rounded-full mx-auto flex items-center justify-between transition-all duration-300 ${
-          scrolled ? "shadow-lg" : ""
-        }`}
+        className={`container px-3 py-3 rounded-full mx-auto flex items-center justify-between transition-all duration-300 ${scrolled ? "shadow-lg" : ""
+          }`}
         style={{
           background: scrolled
             ? "hsl(var(--primary))"
@@ -42,7 +41,7 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center">
           <div className="flex flex-col items-start">
-            <img src={logoImg} alt="Eco Cleaning" className="w-f h-10" />
+            <img src={logoImg} alt="Eco Cleaning" className="w-full h-10" />
           </div>
         </div>
 
@@ -50,13 +49,13 @@ const Header = () => {
         <nav className="hidden md:flex items-center gap-10">
           <button
             onClick={() => scrollToSection("services")}
-            className="text-primary-foreground hover:text-eco-gold transition-colors font-medium text-lg"
+            className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg"
           >
             Services
           </button>
           <button
             onClick={() => scrollToSection("why-eco")}
-            className="text-primary-foreground hover:text-eco-gold transition-colors font-medium text-lg"
+            className="text-primary-foreground hover:text-accent transition-colors font-medium text-lg"
           >
             Why Eco
           </button>
@@ -74,7 +73,7 @@ const Header = () => {
         {/* Mobile Menu */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" className="text-eco-gold p-2 bg-red-900/10 backdrop-blur-sm">
+            <Button variant="ghost" size="icon" className="text-accent p-2 backdrop-blur-sm">
               <Menu className="h-6 w-6" />
               <span className="sr-only">Open menu</span>
             </Button>

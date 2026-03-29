@@ -12,7 +12,7 @@ const benefits = [
   },
   {
     icon: environmentIcon,
-    iconBg: "bg-eco-red",
+    iconBg: "bg-black",
     title: "Environmental Protection",
     description:
       "Biodegradable products that don't harm waterways or contribute to pollution.",
@@ -47,9 +47,9 @@ const WhyChooseSection = () => {
             <div className="space-y-8">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex gap-4">
-                  
-                    <img src={benefit.icon} alt="" className="h-10 w-10 object-contain" aria-hidden />
-                 
+                  <div className={`${benefit.iconBg} rounded-lg p-2 flex items-center justify-center flex-shrink-0 h-10 w-10`}>
+                    <img src={benefit.icon} alt="" className="h-5 w-5 object-contain brightness-0 invert" aria-hidden />
+                  </div>
                   <div>
                     <h3 className="text-lg font-bold text-foreground mb-1">
                       {benefit.title}
@@ -68,7 +68,7 @@ const WhyChooseSection = () => {
                 key={index}
                 className="bg-card p-6 rounded-2xl shadow-[4px_4px_0_#006E01] text-center hover:shadow-lg transition-shadow"
               >
-                <h5 className="text-4xl md:text-5xl font-bold text-eco-light mb-2">
+                <h5 className="text-4xl md:text-5xl font-bold text-primary mb-2">
                   {stat.value}
                 </h5>
                 <div className="text-foreground font-medium">{stat.label}</div>

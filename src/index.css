@@ -32,8 +32,8 @@
     --muted: 42 80% 88%;
     --muted-foreground: 156 50% 30%;
 
-    /* Destructive - Action Red */
-    --destructive: 4 84% 45%;
+    /* Destructive - Jamaica Black */
+    --destructive: 0 0% 13%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 156 40% 80%;
@@ -121,7 +121,7 @@
 
 @layer utilities {
   .text-gradient-gold {
-    @apply bg-gradient-to-r from-accent to-[hsl(46,100%,55%)] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent to-[hsl(46_100%_55%)] bg-clip-text text-transparent;
   }
 
   .text-gradient-jamaica {

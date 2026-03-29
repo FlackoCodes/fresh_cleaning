@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Leaf, CheckCircle2 } from "lucide-react";
-import serviceSofa from "@/assets/service-sofa.jpg";
-import serviceHome from "@/assets/service-home.jpg";
-import servicePressure from "@/assets/service-pressure.jpg";
+import serviceSofa from "@/assets/black.jpg";
+import serviceHome from "@/assets/mop.jpg";
+import servicePressure from "@/assets/black2.jpg";
 
 const services = [
   {
@@ -52,8 +52,8 @@ const ServicesSection = () => {
       <div className="container mx-auto relative">
         <div className="grid lg:grid-cols-2 gap-24 items-start">
           <div>
-            <div className="inline-flex items-center gap-2 bg-[#E6E4C8] px-4 py-2 rounded-full mb-6">
-              <Leaf className="h-4 w-4 text-eco-light" />
+            <div className="inline-flex items-center gap-2 bg-accent/20 px-4 py-2 rounded-full mb-6">
+              <Leaf className="h-4 w-4 text-accent" />
               <span className="text-sm font-medium text-foreground">
                 We do offer the option of eco-friendly products
               </span>

@@ -67,13 +67,9 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         eco: {
-          dark: "hsl(var(--eco-green-dark))",
-          light: "hsl(var(--eco-green-light))",
-          cream: "hsl(var(--eco-cream))",
-          mint: "hsl(var(--eco-mint))",
-          gold: "hsl(var(--eco-gold))",
-          red: "hsl(var(--eco-red))",
-          orange: "hsl(var(--eco-orange))",
+          gold: "42 100% 50%",
+          green: "156 68% 33%",
+          black: "0 0% 13%",
         },
       },
       fontFamily: {
