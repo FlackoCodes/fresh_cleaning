@@ -59,7 +59,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-primary-foreground/70 text-sm">
                 <MapPin className="h-4 w-4 text-accent" />
-                Kingston, Jamaica
+                Toronto, Canada
               </li>
             </ul>
           </div>
